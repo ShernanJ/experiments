@@ -155,3 +155,16 @@ i'll answer these as i build
 - resist adding ui
 - resist adding crawling
 - isolate the agent access problem
+
+---
+
+how agents would actually use it
+
+```
+User -> Agent: "what does strict mode do to effects?"
+Agent -> DocForge: GET /.well-known/docforge.json   (optional)
+Agent -> DocForge: GET /api/docsets
+Agent -> DocForge: GET /api/docsets/react-19/search?q=...
+DocForge -> Agent: top chunks + urls
+Agent -> User: answer using chunks + citations
+```
