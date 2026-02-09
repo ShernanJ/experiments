@@ -71,3 +71,16 @@ focus is on insight, not lines of code.
 each project builds on the last.
 patterns get reused.
 systems get sharper.
+
+---
+
+how agents would actually use it
+
+```
+User -> Agent: "what does strict mode do to effects?"
+Agent -> DocForge: GET /.well-known/docforge.json   (optional)
+Agent -> DocForge: GET /api/docsets
+Agent -> DocForge: GET /api/docsets/react-19/search?q=...
+DocForge -> Agent: top chunks + urls
+Agent -> User: answer using chunks + citations
+```
