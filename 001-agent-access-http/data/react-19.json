@@ -1,0 +1,32 @@
+{
+  "docsetId": "react-19",
+  "name": "React",
+  "version": "19",
+  "updatedAt": "2026-02-08T00:00:00Z",
+  "chunks": [
+    {
+      "chunkId": "c_0001",
+      "title": "useEffect — Cleanup",
+      "url": "https://react.dev/reference/react/useEffect",
+      "content": "If your Effect returns a function, React will run it to clean up after the component unmounts and before re-running the Effect when dependencies change."
+    },
+    {
+      "chunkId": "c_0002",
+      "title": "useEffect — Dependencies",
+      "url": "https://react.dev/reference/react/useEffect",
+      "content": "The dependency array tells React when to re-run the Effect. If you omit it, the Effect runs after every render."
+    },
+    {
+      "chunkId": "c_0003",
+      "title": "Strict Mode — Effects",
+      "url": "https://react.dev/reference/react/StrictMode",
+      "content": "In development, Strict Mode may run some Effects twice to help you find bugs related to missing cleanup."
+    },
+    {
+      "chunkId": "c_0004",
+      "title": "Rules of Hooks",
+      "url": "https://react.dev/reference/rules/rules-of-hooks",
+      "content": "Only call Hooks at the top level of your component or custom Hook. Don’t call Hooks inside loops, conditions, or nested functions."
+    }
+  ]
+}
