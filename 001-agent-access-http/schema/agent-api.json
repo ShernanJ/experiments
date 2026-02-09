@@ -1,0 +1,63 @@
+{
+  "name": "docforge-agent-api",
+  "experiment": "001-agent-access-http",
+  "version": "0.1.0",
+  "baseUrl": "http://localhost:3000",
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "purpose": "sanity check that the agent gateway is alive",
+      "query": {},
+      "response": {
+        "ok": "boolean",
+        "service": "string",
+        "version": "string"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/docsets",
+      "purpose": "discover what docsets exist and what ids to use",
+      "query": {},
+      "response": {
+        "docsets": [
+          {
+            "id": "string",
+            "name": "string",
+            "version": "string",
+            "updatedAt": "string (ISO date)"
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/docsets/{id}/search",
+      "purpose": "retrieve top chunks for a natural-language query within a docset",
+      "query": {
+        "q": "string (required)"
+      },
+      "response": {
+        "docsetId": "string",
+        "version": "string",
+        "query": "string",
+        "results": [
+          {
+            "chunkId": "string",
+            "title": "string",
+            "url": "string",
+            "score": "number",
+            "content": "string",
+            "tokensApprox": "number"
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "responses are intentionally small and citation-ready",
+    "results are capped (top-N) to prevent flooding agents",
+    "tokensApprox is a rough heuristic for cost awareness"
+  ]
+}
